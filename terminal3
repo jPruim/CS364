@@ -1,0 +1,247 @@
+__     ___    ____ ____  
+\ \   / / \  / ___|  _ \ 
+ \ \ / / _ \| |   | |_) |
+  \ V / ___ \ |___|  _ < 
+   \_/_/   \_\____|_| \_\
+    VirginiaCyberRange.org
+
+
+student@kali:~$ ls
+Desktop    Music         nmap_scripts  Public     thinclient_drives
+Documents  nikto_output  passwords     sshd       Videos
+Downloads  nmap_output   Pictures      Templates
+student@kali:~$ cd Documents/
+student@kali:~/Documents$ ls
+student@kali:~/Documents$ cd Doc
+bash: cd: Doc: No such file or directory
+student@kali:~/Documents$ ls
+student@kali:~/Documents$ cd Documents
+bash: cd: Documents: No such file or directory
+student@kali:~/Documents$ ls
+student@kali:~/Documents$ cd ..
+student@kali:~$ ls
+Desktop    Music         nmap_scripts  Public     thinclient_drives
+Documents  nikto_output  passwords     sshd       Videos
+Downloads  nmap_output   Pictures      Templates
+student@kali:~$ cd passwords/
+student@kali:~/passwords$ ls
+target_hashes  target_passwd  target_shadow
+student@kali:~/passwords$ john target_hashes 
+Warning: detected hash type "sha512crypt", but the string is also recognized as "crypt"
+Use the "--format=crypt" option to force loading these as that type instead
+Using default input encoding: UTF-8
+Loaded 2 password hashes with 2 different salts (sha512crypt, crypt(3) $6$ [SHA512 128/128 AVX 2x])
+No password hashes left to crack (see FAQ)
+student@kali:~/passwords$ cat target_hashes 
+root:*:0:0:root:/root:/bin/bash
+daemon:*:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:*:2:2:bin:/bin:/usr/sbin/nologin
+sys:*:3:3:sys:/dev:/usr/sbin/nologin
+sync:*:4:65534:sync:/bin:/bin/sync
+games:*:5:60:games:/usr/games:/usr/sbin/nologin
+man:*:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:*:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:*:8:8:mail:/var/mail:/usr/sbin/nologin
+news:*:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:*:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:*:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:*:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:*:34:34:backup:/var/backups:/usr/sbin/nologin
+list:*:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:*:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:*:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:*:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-timesync:*:100:102:systemd Time Synchronization,,,:/run/systemd:/bin/false
+systemd-network:*:101:103:systemd Network Management,,,:/run/systemd/netif:/bin/false
+systemd-resolve:*:102:104:systemd Resolver,,,:/run/systemd/resolve:/bin/false
+systemd-bus-proxy:*:103:105:systemd Bus Proxy,,,:/run/systemd:/bin/false
+syslog:*:104:108::/home/syslog:/bin/false
+_apt:*:105:65534::/nonexistent:/bin/false
+lxd:*:106:65534::/var/lib/lxd/:/bin/false
+messagebus:*:107:111::/var/run/dbus:/bin/false
+uuidd:*:108:112::/run/uuidd:/bin/false
+dnsmasq:*:109:65534:dnsmasq,,,:/var/lib/misc:/bin/false
+sshd:*:110:65534::/var/run/sshd:/usr/sbin/nologin
+pollinate:*:111:1::/var/cache/pollinate:/bin/false
+ubuntu:!:1000:1000:Ubuntu:/home/ubuntu:/bin/bash
+student:$6$qZXTIN8j$uNVuxR48FELc5jmMRcLj11Cx53Jk.4fskDAtaLzJLq4BEhK1eGz6Su8SoKeXJNeI6IiYY.vymRrSUNBL8dUTq.:1001:1001::/home/student:
+joe:$6$bJyl91OH$LTH.GEhsFUI8GnJpLIQS0WI.Qjk1BuVKC320uhI6/otUN09kIo/iW/jDyUESQwG2Rbf5afOfjDVSHxkF8.tIs0:1002:1002:,,,:/home/joe:/bin/bash
+student@kali:~/passwords$ ls
+target_hashes  target_passwd  target_shadow
+student@kali:~/passwords$ cat target_passwd 
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:100:102:systemd Time Synchronization,,,:/run/systemd:/bin/false
+systemd-network:x:101:103:systemd Network Management,,,:/run/systemd/netif:/bin/false
+systemd-resolve:x:102:104:systemd Resolver,,,:/run/systemd/resolve:/bin/false
+systemd-bus-proxy:x:103:105:systemd Bus Proxy,,,:/run/systemd:/bin/false
+syslog:x:104:108::/home/syslog:/bin/false
+_apt:x:105:65534::/nonexistent:/bin/false
+lxd:x:106:65534::/var/lib/lxd/:/bin/false
+messagebus:x:107:111::/var/run/dbus:/bin/false
+uuidd:x:108:112::/run/uuidd:/bin/false
+dnsmasq:x:109:65534:dnsmasq,,,:/var/lib/misc:/bin/false
+sshd:x:110:65534::/var/run/sshd:/usr/sbin/nologin
+pollinate:x:111:1::/var/cache/pollinate:/bin/false
+ubuntu:x:1000:1000:Ubuntu:/home/ubuntu:/bin/bash
+student:x:1001:1001::/home/student:
+joe:x:1002:1002:,,,:/home/joe:/bin/bash
+student@kali:~/passwords$ ls
+target_hashes  target_passwd  target_shadow
+student@kali:~/passwords$ cd ..
+student@kali:~$ ls
+Desktop    Music         nmap_scripts  Public     thinclient_drives
+Documents  nikto_output  passwords     sshd       Videos
+Downloads  nmap_output   Pictures      Templates
+student@kali:~$ cd passwords/
+student@kali:~/passwords$ john --show
+Password files required, but none specified
+student@kali:~/passwords$ john --show target_passwd 
+0 password hashes cracked, 0 left
+student@kali:~/passwords$ john --show target_hashes 
+student:student:1001:1001::/home/student:
+joe:j:1002:1002:,,,:/home/joe:/bin/bash
+
+2 password hashes cracked, 0 left
+student@kali:~/passwords$ cd ..
+student@kali:~$ ls
+Desktop    Music         nmap_scripts  Public     thinclient_drives
+Documents  nikto_output  passwords     sshd       Videos
+Downloads  nmap_output   Pictures      Templates
+student@kali:~$ nc 10.1.44.155 2323
+whoami
+root
+python -c ‘import pty; pty.spawn(“/bin/bash”)’
+student@kali:~$ nc 10.1.44.155 2323
+(UNKNOWN) [10.1.44.155] 2323 (?) : Connection refused
+student@kali:~$ nc 10.1.44.155 2323
+whoami
+root
+python -c 'import pty; pty.spawn("/bin/bash")'
+root@ip-10-1-44-155:~# sudo usrdel joe
+sudo usrdel joe
+sudo: usrdel: command not found
+root@ip-10-1-44-155:~# ^[[A^[[D^[[D
+sudo usrdel joe
+sudo: usrdel: command not found
+root@ip-10-1-44-155:~# sudo userdel joe
+sudo userdel joe
+userdel: user joe is currently used by process 1645
+root@ip-10-1-44-155:~# sudo rm -r /home/joe
+sudo rm -r /home/joe
+root@ip-10-1-44-155:~# ^[[A^[[A
+sudo userdel joe
+userdel: user joe is currently used by process 1645
+root@ip-10-1-44-155:~# sudo userdel -f joe
+sudo userdel -f joe
+userdel: user joe is currently used by process 1645
+root@ip-10-1-44-155:~# ps-a |grep 1645
+ps-a |grep 1645
+ps-a: command not found
+root@ip-10-1-44-155:~# ^[[A^[[D^[[D^[[B^[[B^[[B^[[B^C
+student@kali:~$ nc 10.1.44.155 2323
+(UNKNOWN) [10.1.44.155] 2323 (?) : Connection refused
+student@kali:~$ nc 10.1.44.155 2324
+python -c ‘import pty; pty.spawn(“/bin/bash”)’
+student@kali:~$ ls
+Desktop    Music         nmap_scripts  Public     thinclient_drives
+Documents  nikto_output  passwords     sshd       Videos
+Downloads  nmap_output   Pictures      Templates
+student@kali:~$ sudo userdel joe
+userdel: user 'joe' does not exist
+student@kali:~$ nc 10.1.44.155 2324
+(UNKNOWN) [10.1.44.155] 2324 (?) : Connection refused
+student@kali:~$ nc 10.1.44.155 2325
+whoami
+root
+python -c ‘import pty; pty.spawn(“/bin/bash”)’
+student@kali:~$ nc 10.1.44.155 2326
+(UNKNOWN) [10.1.44.155] 2326 (?) : Connection refused
+student@kali:~$ nc 10.1.44.155 2327
+whoami
+root
+python -c 'import pty; pty.spawn("/bin/bash")'
+root@ip-10-1-44-155:~# ls
+ls
+root@ip-10-1-44-155:~# ls
+ls
+root@ip-10-1-44-155:~# cd ..
+cd ..
+root@ip-10-1-44-155:/# exit
+exit
+exit
+python -c 'import pty; pty.spawn("/bin/bash")'
+root@ip-10-1-44-155:~# ls
+ls
+root@ip-10-1-44-155:~# mkdir Test
+mkdir Test
+root@ip-10-1-44-155:~# ls
+ls
+Test
+root@ip-10-1-44-155:~# sudo userdel joe
+sudo userdel joe
+userdel: user joe is currently used by process 1645
+root@ip-10-1-44-155:~# sudo rm -r /home/joe
+sudo rm -r /home/joe
+rm: cannot remove '/home/joe': No such file or directory
+root@ip-10-1-44-155:~# sudo gpasswd -d student sudo
+sudo gpasswd -d student sudo
+Removing user student from group sudo
+root@ip-10-1-44-155:~# cd /etc/ssh
+cd /etc/ssh
+root@ip-10-1-44-155:/etc/ssh# ls
+ls
+moduli            ssh_host_dsa_key.pub      ssh_host_rsa_key
+ssh_config        ssh_host_ecdsa_key        ssh_host_rsa_key.pub
+sshd_config       ssh_host_ecdsa_key.pub    ssh_import_id
+sshd_config_old   ssh_host_ed25519_key
+ssh_host_dsa_key  ssh_host_ed25519_key.pub
+root@ip-10-1-44-155:/etc/ssh# sudo rm sshd_config
+sudo rm sshd_config
+root@ip-10-1-44-155:/etc/ssh# ls
+ls
+moduli            ssh_host_dsa_key.pub    ssh_host_ed25519_key.pub
+ssh_config        ssh_host_ecdsa_key      ssh_host_rsa_key
+sshd_config_old   ssh_host_ecdsa_key.pub  ssh_host_rsa_key.pub
+ssh_host_dsa_key  ssh_host_ed25519_key    ssh_import_id
+root@ip-10-1-44-155:/etc/ssh# sudo mv sshd_config_old sshd_config    
+sudo mv sshd_config_old sshd_config
+root@ip-10-1-44-155:/etc/ssh# ssh restart
+ssh restart
+ssh: Could not resolve hostname restart: Name or service not known
+root@ip-10-1-44-155:/etc/ssh# sshrestart
+sshrestart
+sshrestart: command not found
+root@ip-10-1-44-155:/etc/ssh# service sshd restart
+service sshd restart
+root@ip-10-1-44-155:/etc/ssh# exit
+exit
+exit
+^[[A^[[B
+exit     
+student@kali:~$ nc 10.1.44.155 2327
+(UNKNOWN) [10.1.44.155] 2327 (?) : Connection refused
+student@kali:~$ nc 10.1.44.155 2326
+(UNKNOWN) [10.1.44.155] 2326 (?) : Connection refused
+student@kali:~$ nc 10.1.44.155 2325
+(UNKNOWN) [10.1.44.155] 2325 (?) : Connection refused
+student@kali:~$ nc 10.1.44.155 2324
+whoami  
+root
+
